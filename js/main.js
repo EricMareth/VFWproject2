@@ -39,13 +39,13 @@ window.addEventListener("DOMContentLoaded", function(){
 				$('charForm').style.display = "none";
 				$('clearLink').style.display = "inline";
 				$('displayData').style.display = "none";
-				$('addChar').style.display = "inLine";
+				$('addChar').style.display = "inline";
 				break;
 			case "off":
-				$('charForm').style.display = "none";
+				$('charForm').style.display = "block";
 				$('clearLink').style.display = "inline";
-				$('displayData').style.display = "none";
-				$('addChar').style.display = "inLine";			
+				$('displayData').style.display = "inline";
+				$('addChar').style.display = "none";			
 				$('items').style.display = "none";
 				break;
 			default:
@@ -55,7 +55,6 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	
 	function getData(){
-		var isNum = /^\d{6}/;
 		toggleControls("on");
 		if (localStorage.length === 0){
 			alert("There are no characters lurking in the shadows!");
@@ -74,13 +73,11 @@ window.addEventListener("DOMContentLoaded", function(){
 			var obj = JSON.parse(value);
 			var makeSubList = document.createElement('ul');
 			makeLi.appendChild(makeSubList);
-			if (isNum.test(key) === true){
-				for(var n in obj){
-					var makeSubLi = document.createElement('li');
-					makeSubList.appendChild(makeSubLi);
-					var optSubText = obj[n][0] + " " + obj[n][1];
-					makeSubLi.innerHTML = optSubText;
-				}
+			for(var n in obj){
+				var makeSubLi = document.createElement('li');
+				makeSubList.appendChild(makeSubLi);
+				var optSubText = obj[n][0] + " " + obj[n][1];
+				makeSubLi.innerHTML = optSubText;
 			}
 		}
 	}
