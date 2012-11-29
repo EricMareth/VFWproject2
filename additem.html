@@ -27,7 +27,7 @@
 					<li><label for="charName">Character Name: </label><input type="text" id="charName" /></li>
 					<li><label for="taleName">For the Story: </label><input type="text" id="taleName" /></li>
 					<li><label for="homeLand">Lives In: </label><input type="text" id="homeLand" placeholder="Oz, Neverland, etc." /></li>
-					<li><label for="city">Kingdom? (disabled):</label><input type="text" id="city" disabled />		
+					<li><label for="city" id="city">Kingdom? (disabled):</label><input type="text" id="city" disabled />		
 	<!-- Radio button to declare character gender -->
 					<li>What is the character's gender?
 						<ul>
@@ -76,7 +76,7 @@
 	<!-- Hidden value to give the character file an ID number for internal reference. -->
 			<input type="hidden" value="charIdNum########" />
 	<!-- Submit input type to add character to the database -->
-			<input type="button" value="Bring Your Character To Life!" />
+			<input type="button" id="button" value="Bring Your Character To Life!" />
 	<!-- Anchor tags to access the "Clear Stored Data" and "Display Data" actions.-->
 			<p>	<a href="#">Clear Stored Data</a>
 				<a href="#">Display Data</a></p>

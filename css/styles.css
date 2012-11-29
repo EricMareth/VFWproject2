@@ -7,6 +7,7 @@
 
 html {
 	background: #cccccc;
+	overflow: scroll;
 	
 }
 
@@ -30,13 +31,18 @@ p {
 	font-family: "Trebuchet MS" ;
 }
 
-label {
+li {
 	font-family: "Trebuchet MS" ;
+}
+
+li #city {
+	text-decoration: line-through;
 }
 
 fieldset {
 	background: white;
 	margin: 0px 0px 25px 0px;
+	line-height: 28px;
 }
 
 
@@ -46,6 +52,10 @@ legend {
 	padding: 2px 10px 3px 10px;
 	outline: 2px solid gray;
 	color: #990000;
+}
+
+#button {
+	padding: center;
 }
 
 #addLink {
