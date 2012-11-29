@@ -38,21 +38,34 @@ window.addEventListener("DOMContentLoaded", function(){
 			case "on":
 				$('charForm').style.display = "none";
 				$('clearLink').style.display = "inline";
-				$('displayData')style.display = "none";
-				$('addLink')style.display = "inLine";
+				$('displayData').style.display = "none";
+				$('addChar').style.display = "inLine";
+				break;
 			case "off":
-			
+				$('charForm').style.display = "none";
+				$('clearLink').style.display = "inline";
+				$('displayData').style.display = "none";
+				$('addChar').style.display = "inLine";			
+				$('items').style.display = "none";
+				break;
 			default:
 				return false;
 		}
 	}
 	
+	
 	function getData(){
+		var isNum = /^\d{6}/;
+		toggleControls("on");
+		if (localStorage.length === 0){
+			alert("There are no characters lurking in the shadows!");
+		}
 		var makeDiv = document.createElement('div');
 		makeDiv.setAttribute("id","items");
 		var makeList =document.createElement('ul');
 		makeDiv.appendChild(makeList);
 		document.body.appendChild(makeDiv);
+		$('items').style.display = "display";
 		for( i=0, length=localStorage.length; i<length; i++){
 			var makeLi = document.createElement('li');
 			makeList.appendChild(makeLi);
@@ -61,12 +74,25 @@ window.addEventListener("DOMContentLoaded", function(){
 			var obj = JSON.parse(value);
 			var makeSubList = document.createElement('ul');
 			makeLi.appendChild(makeSubList);
-			for(var n in obj){
-				var makeSubLi = document.createElement('li');
-				makeSubList.appendChild(makeSubLi);
-				var optSubText = obj[n][0] + " " + obj[n][1];
-				makeSubLi.innerHTML = optSubText;
+			if (isNum.test(key) === true){
+				for(var n in obj){
+					var makeSubLi = document.createElement('li');
+					makeSubList.appendChild(makeSubLi);
+					var optSubText = obj[n][0] + " " + obj[n][1];
+					makeSubLi.innerHTML = optSubText;
+				}
 			}
+		}
+	}
+	
+	function clearLocal(){
+		if(localStorage.length === 0){
+			alert("There is no data to clear.")
+		}else{
+			localStorage.clear();
+			alert("All characters have been destroyed!");
+			window.location.reload();
+			return false;
 		}
 	}
 	
@@ -93,8 +119,8 @@ window.addEventListener("DOMContentLoaded", function(){
 
 	var displayData = $('displayData');
 	displayData.addEventListener("click", getData);
-/*	var clearLink = $('clearLink');
-	clearLink.addEventListener("click", clearLocal);*/
+	var clearLink = $('clearLink');
+	clearLink.addEventListener("click", clearLocal);
 	var save = $('saveChar');
 	save.addEventListener("click", storeData); 
 	
