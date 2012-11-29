@@ -6,7 +6,7 @@
 
 
 html {
-	background: #cccccc;
+	background: #999999;
 	overflow: scroll;
 	
 }
@@ -14,8 +14,9 @@ html {
 h1 {
 	font-family: Impact;
 	text-align: center;
-	letter-spacing: 3px;
+	letter-spacing: 2px;
 	color: #990000;
+	background: #fff;
 
 }
 
@@ -37,6 +38,7 @@ li {
 
 li #city {
 	text-decoration: line-through;
+	color: gray;
 }
 
 fieldset {
@@ -54,13 +56,19 @@ legend {
 	color: #990000;
 }
 
-#button {
-	padding: center;
+#detailField label {
+	display: block;
+}
+
+textarea{
+	width: 250px;
+	height: 50px;
 }
 
 #addLink {
 	margin: 70px;
 	padding: 10px 20px 10px 20px;
 	background: white;
-	border: 6px double gray;
+	border: 6px double midnightblue;
+	box-shadow: 5px 5px 10px #555;
 }

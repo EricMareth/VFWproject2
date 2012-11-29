@@ -10,7 +10,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	}
 	
 	function whatType(){
-		var formTag = document.getElementsByTagName("form");
+		var formTag = document.getElementsByTagName("form"),
 			selectLi = $('selectType'),
 			makeSelect = document.createElement('select');
 			makeSelect.setAttribute("id", "type");
@@ -102,7 +102,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			item.land		=["Land:", $('homeLand').value];
 			item.gender		=["Sex:", genderVal];
 			item.age		=["Age:", $('age').value];
-			item.type		=["Character Type:", $('selectType').value];
+			item.type		=["Character Type:", $('type').value];
 			item.details	=["Details:", $('details').value];
 			item.created	=["Birthdate:", $('created').value];
 		
@@ -111,7 +111,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		
 	}
 	
-	var charType = ["== What character type? ==", "Hero", "Side-kick", "Love Interest", "Mentor", "Villain", "Henchman", "Sub-Villain", "Supporting", "Walk-on", "Off-Screen", ]
+	var charType = ["Hero", "Side-kick", "Love Interest", "Mentor", "Villain", "Henchman", "Sub-Villain", "Supporting", "Walk-on", "Off-Screen", ]
 	whatType();
 
 	var displayData = $('displayData');
