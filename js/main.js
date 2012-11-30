@@ -111,6 +111,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		
 	}
 	
+	
 	var charType = ["Hero", "Side-kick", "Love Interest", "Mentor", "Villain", "Henchman", "Sub-Villain", "Supporting", "Walk-on", "Off-Screen", ]
 	whatType();
 
@@ -119,6 +120,6 @@ window.addEventListener("DOMContentLoaded", function(){
 	var clearLink = $('clearLink');
 	clearLink.addEventListener("click", clearLocal);
 	var save = $('saveChar');
-	save.addEventListener("click", storeData); 
+	save.addEventListener("click", storeData);
 	
 });
